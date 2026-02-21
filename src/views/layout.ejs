@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - Multi-Tool Calculator</title>
+    <meta name="description" content="<%= description || 'High-performance multi-tool calculators for finance, tax, health, and utilities.' %>">
+    <link href="/css/output.css" rel="stylesheet">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org -->
+    <% if (typeof schema !== 'undefined') { %>
+        <script type="application/ld+json">
+            <%- JSON.stringify(schema) %>
+        </script>
+    <% } %>
+</head>
+<body class="flex flex-col min-h-screen">
+    
+    <%- include('partials/header') %>
+
+    <!-- Ad placeholder (above content) -->
+    <div class="bg-gray-200 text-gray-500 text-center py-2 text-xs border-y border-gray-300">
+        Ad Placement - Above Content
+    </div>
+
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <%- body %>
+    </main>
+
+    <!-- Ad placeholder (sticky footer) -->
+    <div class="fixed bottom-0 w-full bg-gray-200 text-gray-500 text-center py-1 text-xs border-t border-gray-300 z-50">
+        Ad Placement - Sticky Footer
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script src="/js/main.js"></script>
+    <% if (typeof scripts !== 'undefined') { %>
+        <%- scripts %>
+    <% } %>
+</body>
+</html>

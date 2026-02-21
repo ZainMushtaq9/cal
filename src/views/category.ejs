@@ -1,0 +1,28 @@
+<div class="mb-8">
+    <h1 class="text-3xl md:text-4xl font-bold text-brand-dark mb-2">
+        <%= categoryTitle %>
+    </h1>
+    <p class="text-lg text-slate-600">
+        <%= categoryDescription %>
+    </p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <% calculators.forEach(calc=> { %>
+        <a href="/<%= calc.slug %>" class="card hover:border-brand-blue hover:shadow-md transition group block">
+            <h3 class="text-lg font-semibold group-hover:text-brand-blue transition mb-2">
+                <%= calc.name %>
+            </h3>
+            <p class="text-sm text-slate-500 line-clamp-3">
+                <%= calc.description %>
+            </p>
+            <div class="mt-4 text-brand-blue text-sm font-medium group-hover:underline">Use Calculator &rarr;</div>
+        </a>
+        <% }) %>
+</div>
+
+<% if (calculators.length===0) { %>
+    <div class="text-center py-16 text-slate-500">
+        <p class="text-lg">No calculators in this category yet. Check back soon!</p>
+    </div>
+    <% } %>

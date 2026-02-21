@@ -1,0 +1,58 @@
+<div class="text-center py-16">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-brand-dark mb-6 tracking-tight">Free Financial & Utility
+        Calculators</h1>
+    <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto mb-10">High-performance tools for loans, investments,
+        taxes, and everyday math. Fast, accurate, and completely free to use.</p>
+
+    <div class="flex justify-center gap-4">
+        <a href="#finance" class="btn-primary">Explore Finance Tools</a>
+        <a href="#utility" class="btn-secondary">Utility Tools</a>
+    </div>
+</div>
+
+<div id="finance" class="my-12">
+    <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold border-l-4 border-brand-blue pl-4">Finance & Investment</h2>
+        <a href="/finance-calculators" class="text-sm font-semibold text-brand-blue hover:underline">View All &rarr;</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Will be populated dynamically -->
+        <% calculators.filter(c=> c.category === 'finance').slice(0, 6).forEach(calc => { %>
+            <a href="/<%= calc.slug %>" class="card hover:border-brand-blue hover:shadow-md transition group block">
+                <h3 class="text-lg font-semibold group-hover:text-brand-blue transition mb-2">
+                    <%= calc.name %>
+                </h3>
+                <p class="text-sm text-slate-500 line-clamp-2">
+                    <%= calc.description %>
+                </p>
+            </a>
+            <% }) %>
+    </div>
+</div>
+
+<!-- Placeholder for Ad -->
+<div class="my-10 bg-gray-200 h-24 flex items-center justify-center text-gray-500 text-sm border border-gray-300">
+    Mid-content Ad Placement
+</div>
+
+<div id="utility" class="my-12">
+    <div class="flex items-center justify-between mb-8">
+        <h2 class="text-2xl font-bold border-l-4 border-brand-green pl-4">Everyday Utilities</h2>
+        <a href="/utility-calculators" class="text-sm font-semibold text-brand-blue hover:underline">View All &rarr;</a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Will be populated dynamically -->
+        <% calculators.filter(c=> c.category === 'utility').slice(0, 6).forEach(calc => { %>
+            <a href="/<%= calc.slug %>" class="card hover:border-brand-green hover:shadow-md transition group block">
+                <h3 class="text-lg font-semibold group-hover:text-brand-green transition mb-2">
+                    <%= calc.name %>
+                </h3>
+                <p class="text-sm text-slate-500 line-clamp-2">
+                    <%= calc.description %>
+                </p>
+            </a>
+            <% }) %>
+    </div>
+</div>

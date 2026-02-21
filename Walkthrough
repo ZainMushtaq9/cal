@@ -1,0 +1,59 @@
+# ProposalGenius — MVP Walkthrough
+
+## What Was Built
+
+ProposalGenius is a fully functional AI-powered document generation platform. It runs as a single-page app from the file `proposalgenius/index.html` — **no server or installation required**.
+
+---
+
+## Features
+
+| Feature | Status | Details |
+|---|---|---|
+| Signup / Login | ✅ | Any email + password (demo) |
+| 6 Document Templates | ✅ | All FREE — no tier gates |
+| AI Generation | ✅ | Groq `llama-3.1-8b-instant` |
+| Edit + Preview Tabs | ✅ | Markdown editor + live render |
+| PDF Export | ✅ | Professional A4, no watermark |
+| AI Detection | ✅ | Custom Groq analysis prompt |
+| Plagiarism Check | ✅ | Originality baseline scan |
+| Dashboard & Stats | ✅ | Usage counts + document list |
+| LocalStorage Persistence | ✅ | Sessions + documents saved |
+
+---
+
+## How to Use
+
+1. **Open** `c:\Users\Kashif\Documents\Zain this\proposalgenius\index.html` in any modern browser
+2. **Sign up** with any email + password (4+ chars)
+3. **Generate** → pick a template → fill title and details → click **✨ Generate with Groq AI**
+4. Switch to **Preview** tab to review formatted output
+5. Click **💾 Save Document** — you'll be taken to the document viewer
+6. From the viewer, click **Export PDF** or run **AI Detection** / **Plagiarism Check**
+
+---
+
+## Screenshot — Editor View
+
+![ProposalGenius Editor](file:///C:/Users/Kashif/.gemini/antigravity/brain/459ec3e3-416a-448e-9143-cc431e4e97a1/final_editor_view_1771595185461.png)
+*Business Proposal editor open with Edit/Preview tab switcher, sidebar controls, and full Groq-powered text area.*
+
+---
+
+## Files Created
+
+| File | Path |
+|---|---|
+| [index.html](file:///C:/Users/Kashif/Documents/Zain%20this/proposalgenius/index.html) | `proposalgenius/index.html` |
+| [style.css](file:///C:/Users/Kashif/Documents/Zain%20this/proposalgenius/style.css) | `proposalgenius/style.css` |
+| [app.js](file:///C:/Users/Kashif/Documents/Zain%20this/proposalgenius/app.js) | `proposalgenius/app.js` |
+
+---
+
+## Architecture Notes
+
+- **No Node.js / no backend server** — pure browser-side SPA
+- **Groq API key** is embedded in `_CFG` inside `app.js` 
+- **Model**: `llama-3.1-8b-instant` (fast, accurate, free tier)
+- **Data persistence**: `localStorage` key `pg_v2`
+- Clear existing data: open browser → DevTools → Application → LocalStorage → delete `pg_v2`
